@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script>
+        function toggleVideo() {
+            const videoContainer = document.getElementById('video-container');
+            if (videoContainer.style.display === 'none') {
+                videoContainer.style.display = 'block';
+                document.getElementById('play-btn').textContent = "Hide Video";
+            } else {
+                videoContainer.style.display = 'none';
+                document.getElementById('play-btn').textContent = "Play Video";
+            }
+        }
+    </script>
+</head>
+<body class="result-body">
+    <div class="container">
+        <h1>Video Analysis Result</h1>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% else %}
+            <p><strong>Result:</strong> {{ result }}</p>
+            <p><strong>Confidence:</strong> {{ confidence }}%</p>
+            <p><strong>File size:</strong> {{ size }} MB</p>
+
+            {% if frame_filename %}
+            <div class="frame-preview">
+                <p>Preview (Extracted Frame):</p>
+                <img src="{{ url_for('frame_file', filename=frame_filename) }}" alt="Video Frame" />
+            </div>
+            {% endif %}
+
+            <button id="play-btn" onclick="toggleVideo()">Play Video</button>
+
+            <div id="video-container" style="display:none; margin-top: 20px;">
+                <video controls width="640">
+                    <source src="{{ url_for('uploaded_file', filename=filename) }}" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        {% endif %}
+        <br /><br />
+        <a href="{{ url_for('index') }}">&#8592; Upload another video</a>
+    </div>
+</body>
+</html>

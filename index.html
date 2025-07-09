@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Deepfake Video Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body class="home-body">
+    <div class="container">
+        <h1>Deepfake Video Detection</h1>
+        <p class="description">
+            Upload a video file and let our AI analyze it to determine whether the video is <strong>real</strong> or a <strong>deepfake</strong>.
+        </p>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="video" accept="video/*" required /><br />
+            <button type="submit">Analyze Video</button>
+        </form>
+        <footer>
+            <p>Powered by EfficientNet & Transformer AI Model</p>
+        </footer>
+    </div>
+</body>
+</html>

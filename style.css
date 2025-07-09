@@ -1,0 +1,136 @@
+body.home-body, body.result-body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4fc 0%, #e6ebfa 100%);
+    background-size: 200% 200%;
+    animation: shimmer 15s ease-in-out infinite;
+    color: #333;  /* dark gray for better readability on print */
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    box-shadow: 0 0 15px rgba(180, 180, 200, 0.4);
+    border-radius: 8px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #1f3b57;
+}
+
+.description {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #37474f;
+}
+
+form input[type="file"] {
+    display: block;
+    margin: 0 auto 20px auto;
+    background-color: #e8eaf6;
+    border: 1px solid #c5cae9;
+    color: #1a237e;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="file"]:hover {
+    background-color: #d1d9ff;
+}
+
+form button {
+    background-color: #c5cae9;
+    border: none;
+    color: #1a237e;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #b0bec5;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+    background-color: #b0bdf1;
+    box-shadow: 0 0 15px #9fa8da;
+}
+
+.frame-preview {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.frame-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(120, 144, 156, 0.6);
+}
+
+button#play-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #aed581; /* light green */
+    color: #1b5e20;
+    border: none;
+    box-shadow: 0 0 10px #c5e1a5;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button#play-btn:hover {
+    background-color: #9ccc65;
+    box-shadow: 0 0 15px #aed581;
+}
+
+.error {
+    color: #d32f2f;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 6px #ef9a9a;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #3949ab;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #5c6bc0;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 30px;
+    color: #607d8b;
+    font-style: italic;
+    font-size: 0.9rem;
+}
